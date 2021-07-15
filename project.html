@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>HYT | Project</title>
+        <meta property="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+        <meta name="format-detection" content="telephone=no">
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="website" />
+        <!-- <meta property="og:image" content="img/fbshare.png" /> -->
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        <meta property="og:description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="icon" href="img/favicon.png">
+        <link rel="stylesheet" href="css/layout.css" media="screen" />
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="block">
+                <a href="index.html" class="box logo"></a>
+                <div class="box navBar pcShow">
+                    <a href="index.html" class="sub">Home</a>
+                    <!-- <a href="javascript:;" class="sub">About</a> -->
+                    <a href="projectList.html" class="sub on">Project List</a>
+                </div>
+                <a href="javascript:;" class="box menuIcon mShow">
+                    <span class="dot">
+                        <i></i>
+                        <i></i>
+                    </span>
+                    <span class="dot dot2">
+                        <i></i>
+                        <i></i>
+                    </span>
+                </a>
+                <div class="navOpen mShow">
+                    <a href="index.html" class="sub">Home</a>
+                    <!-- <a href="javascript:;" class="sub">About</a> -->
+                    <a href="projectList.html" class="sub">Project List</a>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="loading on">
+                <div class="loadingIcon" data-loader="ball-roll"></div>
+            </div>
+            <div class="main">
+                <!-- project01-花旗薦賞家 -->
+                <div class="project project01">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/kv_img5.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>花旗薦賞家</h3>
+                                <p>如何在大量的圖文中配合多尺寸的RWD介面去精雕細琢？</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/kv_img5.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 02</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div id="work2" class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p1_icon1.png" alt="">
+                                    </div>
+                                    <h5>版面建議</h5>
+                                    <p>整頁內容多是5：5均分的形式，在每行字都要求對齊的狀態下，因縮放視窗容易有破版的狀況，需事前溝通落差。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p1_icon2.png" alt="">
+                                    </div>
+                                    <h5>漸層用色</h5>
+                                    <p>若圖像非延伸性，僅為部分細節的漸層呈現，是可以切圖的方式呈現；若文字主要以漸層為主，則會因瀏覽器限制，事先建議以純色為佳。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p1_icon3.png" alt="">
+                                    </div>
+                                    <h5>GIF支援</h5>
+                                    <p>部分圖形因有僂空設計/不規則形狀，在程式上寫掃光就不盡理想。<br>建議設計直接以GIF方式出圖，完美呈現。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 客製輪播：圖片與文字的配合？回到初始值？</a>
+                                <div class="cont">一開始接到的需求是希望以 GIF 配合文字輪播，但每一次滑動到下一個 slide 就必須從 step1 開始，GIF 是無法清空重來的。
+                                    <br>而後改成了圖片與文字皆以 setInterval 的方式去寫。但這是我第一次使用 setInterval ，為了清除 clearInterval 花了一點時間研究。
+                                    <br>而後我發現，原來每次重叫一次這個計時器，就必須 clearInterval 一次，並且要額外寫一個function去停止這個計時器，並定義當輪播不等於初始值時，應該回到初始值，意即if ( num >= 0 ) { num = 0; };
+                                </div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 如何讓漸層色適應各瀏覽器？</a>
+                                <div class="cont">若文字需使用漸層色，應事先考量IE瀏覽器的支援性：事先用@media screen\0去針對舊版IE的漸層文字覆寫為純色，避免瀏覽時出現異常。</div>
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q3</span> 如何平均每個產品的視覺比例？</a>
+                                <div class="cont">一開始在切圖時，就需找出最大高度與最大寬度，讓每個產品圖都在同個比例以 width:100% 縮放。<br>
+                                    另外，在所有物件都要求齊高的前提下，需計算一定的高度去撐開物件，讓使用者在縮放視窗時，物件的排列有一致的整齊度。</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q4</span> 放置GIF為何會有白邊？</a>
+                                <div class="cont">GIF應避免原圖片有中空、遮罩等效果，在對比色較高的頁面下，易有白色毛邊。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                花旗私人財富管理的推薦開戶頁面。<br>一開始從花旗智富管理、財富管理到私人財富管理的頁面，客戶最要求的就是每個細節都必須完美對齊。
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p1_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>以transform : scale入場的KV特效</h4>
+                                        <ul>
+                                            <li>須重新計算切出的圖片高度：因客戶要求所有畫面需完美呈現設計所呈現的匡列範圍，因此須額外切圖片範圍讓 transform : scale時，放大也能呈現完美的畫面。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>以transform : scale入場的KV特效</h4>
+                                    <ul>
+                                        <li>須重新計算切出的圖片高度：因客戶要求所有畫面需完美呈現設計所呈現的匡列範圍，因此須額外切圖片範圍讓 transform : scale時，放大也能呈現完美的畫面。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p1_img2.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p1_img3.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p1_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>與設計師討論GIF的背景運用</h4>
+                                        <ul>
+                                            <li>GIF出圖的細節注意：如果背景為漸層色的設計，因RWD縮放時會影響到漸層，且GIF本身含陰影，故會建議將整個區塊改為純色設計，較不影響呈現。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>與設計師討論GIF的背景運用</h4>
+                                        <ul>
+                                            <li>GIF出圖的細節注意：如果背景為漸層色的設計，因RWD縮放時會影響到漸層，且GIF本身含陰影，故會建議將整個區塊改為純色設計，較不影響呈現。</li>
+                                        </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <a href="https://www.citibank.com.tw/global_docs/chi/id/RBMGM_clientspage/CPC/index.html" target="_blank" class="btn">線上連結</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- project01-花旗薦賞家 -->
+
+                <!-- project02-全方位保險規劃 -->
+                <div class="project project02">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/kv_img2.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>全方位保險規劃</h3>
+                                <p>在Desktop、Tablet、Mobile有不同的介面呈現。</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/kv_img2.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 03</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p2_icon1.png" alt="">
+                                    </div>
+                                    <h5>各種排列</h5>
+                                    <p>在三種裝置中（Desktop、Tablet、Mobile）沒有連貫性的縮放方式，需事先思考HTML的架構，避免重複撰寫。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p2_icon2.png" alt="">
+                                    </div>
+                                    <h5>公用框架</h5>
+                                    <p>公用框架中 <b>header</b> 及 <b>footer</b> 所使用的所有標籤，ex：h1、h2、h3....etc：避免套入框架的衝突。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p2_icon3.png" alt="">
+                                    </div>
+                                    <h5>緩慢的美感</h5>
+                                    <p>利用較長的秒數，來製造緩慢變動的美感。在 transition 方面會寫 opacity 1s,z-index 0.5s,visibility 1s：以1s為單位漸出。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 如何讓文字就斷在客戶需求之上？</a>
+                                <div class="cont">遇上客戶要求文字務必要斷在某一處，就只能藉由固定寬度的容器或是以客戶裝置為主，去寫不同斷點的樣式(ex:max-width:1270px & max-width:1920px)。</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 一張圖片，究竟哪裡可以被切到？其實很重要。</a>
+                                <div class="cont">每個客戶在意的點不同，需事先溝通好，萬一在瀏覽器寬度不足時，可以犧牲、裁切的部分是哪邊？再以 background-position 去做個別定位。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                花旗保險的核心概念介紹。<br>此案還有執行額外延伸的產品頁面，可參考：<br>
+                                花旗保險預約諮詢：<a href="https://www.citibank.com.tw/sim/insurance/bancassurance/cm/index.htm" target="_blank" class="url">https://www.citibank.com.tw/sim/insurance/bancassurance/cm/index.htm</a>
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p2_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>max-width:500px、max-width:1024px、max-width:1270px</h4>
+                                        <ul>
+                                            <li>因KV的視覺呈現上，需要把文字置於藍色圈圈的缺口中，因此在不同尺寸時，就需要裁切不同尺寸的圖片。然後這也是我第一次以 max-width:500px 來作為斷點，只為了呈現最剛好的視覺。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>max-width:500px、max-width:1024px、max-width:1270px</h4>
+                                    <ul>
+                                        <li>因KV的視覺呈現上，需要把文字置於藍色圈圈的缺口中，因此在不同尺寸時，就需要裁切不同尺寸的圖片。然後這也是我第一次以 max-width:500px 來作為斷點，只為了呈現最剛好的視覺。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p2_img2.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p2_img3.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p2_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>整齊劃一的方格排列</h4>
+                                        <ul>
+                                            <li>這個區塊用到三種整齊排列的方式，在縮放時看似沒有直接關聯，但在畫面上整齊劃一的排列，看起來乾淨整潔。<br>
+                                            5:5的格式，再以 width 的百分比及 margin 推出不同間隙。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>整齊劃一的方格排列</h4>
+                                        <ul>
+                                            <li>這個區塊用到三種整齊排列的方式，在縮放時看似沒有直接關聯，但在畫面上整齊劃一的排列，看起來乾淨整潔。<br>
+                                                5:5的格式，再以 width 的百分比及 margin 推出不同間隙。</li>
+                                        </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <a href="https://www.citibank.com.tw/sim/insurance/bancassurance/index.htm" target="_blank" class="btn">線上連結</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- project02-全方位保險規劃 -->
+
+                <!-- project03-超A咖 怪好玩 -->
+                <div class="project project03">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/kv_img3.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>超A咖 怪好玩</h3>
+                                <p>明亮的色調加上動態圖的穿插示意，讓整個頁面都變得生動有趣。</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/kv_img3.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 04</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div id="work2" class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p3_icon1.png" alt="">
+                                    </div>
+                                    <h5>100%縮放</h5>
+                                    <p>需事先規劃好所有圖片都以同一個基準切圖，並限定放大時的最大寬度，一般我都會訂在1440px。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p3_icon2.png" alt="">
+                                    </div>
+                                    <h5>GIF點綴</h5>
+                                    <p>因製作 GIF 費時，且事後改寫尺寸較麻煩。一開始處理頁面時會優先把需作為 GIF 的圖片切出，提供尺寸給設計作為參考。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p3_icon3.png" alt="">
+                                    </div>
+                                    <h5>專用字體</h5>
+                                    <p>不同客戶可能會有不同指定的字體，但線上不支援時，需說服客戶網頁會以圖片為主。但圖片有個缺點：相較切字網頁，略顯模糊。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 純 GIF 在 edge、IE 等無法正常顯示？</a>
+                                <div class="cont">若以大量的偽元素寫 GIF，會造成 edge、IE 等瀏覽器無法正常顯示。應嘗試以 Div 做為容器。</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 受原生設定的 body,html 影響，要怎麼解決衝突？</a>
+                                <div class="cont">從 DevTools 中逐一檢視 style 的原生元素，例如 body、html、a 等標籤；或者從 HTML 中刪除部分 code 逐一測試是否有命名重疊等問題。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                Samsung A52 手機產品介紹頁。<br>Galaxy A32 5G是一支主打平價、年輕族群的手機，且一系列產品皆以特殊可愛的色系為主打，因此此頁主要以藍色系為主。
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p3_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>分割有特殊動作的按鈕</h4>
+                                        <ul>
+                                            <li>因設計希望按鈕在 hover 時能有其他樣式，因此該頁面所有的按鈕都是額外切出的。並用 absolute 加上 top、left 的百分比去做縮放網頁時的定位。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>分割有特殊動作的按鈕</h4>
+                                    <ul>
+                                        <li>因設計希望按鈕在 hover 時能有其他樣式，因此該頁面所有的按鈕都是額外切出的。並用 absolute 加上 top、left 的百分比去做縮放網頁時的定位。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p3_img2.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p3_img3.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p3_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>logo 大小的哲學</h4>
+                                        <ul>
+                                            <li>每個通路連結的 logo 都要按照同個比例下去放置，避免爭議。因此會以所有 logo 中的最大寬度、最大高度做為所有 logo 圖片的尺寸。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>logo 大小的哲學</h4>
+                                        <ul>
+                                            <li>每個通路連結的 logo 都要按照同個比例下去放置，避免爭議。因此會以所有 logo 中的最大寬度、最大高度做為所有 logo 圖片的尺寸。</li>
+                                        </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <a href="https://www.samsung.com/tw/campaign/galaxy-a32-5g-2021-promotion/" target="_blank" class="btn">線上連結</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- project03-超A咖 怪好玩 -->
+
+                <!-- project04-MEET TAIWAN -->
+                <div class="project project04">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/page2_img1.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>MEET TAIWAN</h3>
+                                <p>多語系需考量文字長度可能造成破版，須在一開始就預留版面的延伸性。</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/page2_img1.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 08</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div id="work2" class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p4_icon1.png" alt="">
+                                    </div>
+                                    <h5>預留版面</h5>
+                                    <p>該專案有多語系需求，需事先與設計溝通頁面須以延伸性作為考量，避免同一版型下語系切換造成跑版。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p4_icon2.png" alt="">
+                                    </div>
+                                    <h5>多頁架構</h5>
+                                    <p>因活動頁面需求繁多，需統整所有頁面的共通元素，加快撰寫效率。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p4_icon3.png" alt="">
+                                    </div>
+                                    <h5>後端合作</h5>
+                                    <p>先與後端釐清需求、頁面示意範圍等，確保銜接無礙。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 全縮放的網頁如何避免在不同裝置下破版？</a>
+                                <div class="cont">我習慣以 font-size：vw 為單位計算文字。先以固定寬度 (ex：1280px) 去檢視 Photoshop 檔案的字級大小，再計算該尺寸的對應 font-size。即可在頁面縮放時有對應比例的字級大小。<br>手機版時則會以px做為單位。</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 多語系切換下的 CSS 架構</a>
+                                <div class="cont">在主要的 CSS 寫主語系為主的樣式。不同語系時，代入該語系的 CSS 去做客制，避免後續維護費時繁瑣。</div>
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 大型專案下的協調分工</a>
+                                <div class="cont">在資料量龐大的前提下，需事先協調哪些區域需要後端協助？例如該頁面包含心理測驗，其中的選題的編排？多語系的切換…等。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                整體視覺以星空為主，會在 hover 的元素中額外添加白色光暈，增加情境感。
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p4_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>特殊的星空背景色</h4>
+                                        <ul>
+                                            <li>壓縮檔案：組成比較複雜的背景通常檔案較大，要注意檔案大小控制在800kb內，才不會增加使用者負擔。</li>
+                                            <li>背景延伸性：若在設計上有無法截斷的區塊(例：整片背景下對單一重點文字增加光源等)，需判別位置是否能對應上？<br>另外左右兩側會額外以羽化接上純色，增加延伸性。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>特殊的星空背景色</h4>
+                                    <ul>
+                                        <li>壓縮檔案：組成比較複雜的背景通常檔案較大，要注意檔案大小控制在800kb內，才不會增加使用者負擔。</li>
+                                        <li>背景延伸性：若在設計上有無法截斷的區塊(例：整片背景下對單一重點文字增加光源等)，需判別位置是否能對應上？<br>另外左右兩側會額外以羽化接上純色，增加延伸性。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p4_img5.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p4_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>Float 與 display : inline-block 的排列方式</h4>
+                                        <ul>
+                                            <li>目前使用下來，在主要元素排列或多於兩個元件排列的狀態下，我比較喜歡用 float 勝過於 display。<br>一方面 float 的使用上更彈性，可以省略掉小部份尺寸可能會有破版的狀況，二來在一些特殊的手機排版下可能會有 float : left --> float : right 的狀態。display : inline-block 適用於同元件下小元素的排列。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>Float 與 display : inline-block 的排列方式</h4>
+                                    <ul>
+                                        <li>目前使用下來，在主要元素排列或多於兩個元件排列的狀態下，我比較喜歡用 float 勝過於 display。<br>一方面 float 的使用上更彈性，可以省略掉小部份尺寸可能會有破版的狀況，二來在一些特殊的手機排版下可能會有 float : left --> float : right 的狀態。display : inline-block 適用於同元件下小元素的排列。</li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- project04-MEET TAIWAN -->
+
+                <!-- project05-反正我好看 出色登場 -->
+                <div class="project project05">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/page2_img2.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>反正我好看 出色登場</h3>
+                                <p>所有圖片都在同屬性同個尺寸下去計算比例，才能讓所有比例都在同一個出發點上。</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/page2_img2.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 05</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div id="work2" class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p5_icon1.png" alt="">
+                                    </div>
+                                    <h5>動態需求</h5>
+                                    <p>應客戶需求每個動作環節都希望加上一些動態，因此在與設計的溝通上需要花比較多時間達成共識。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p5_icon2.png" alt="">
+                                    </div>
+                                    <h5>多色配置</h5>
+                                    <p>產品主線為繽紛多彩的設計，在運用上以SCSS的變數可以輕易完成統一顏色的置換。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p5_icon3.png" alt="">
+                                    </div>
+                                    <h5>多字處理</h5>
+                                    <p>在我執行中的專案裡比較少遇到需要省略文字的情境。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 文字隱藏時，-webkit-line-clamp 的限制？</a>
+                                <div class="cont">Safari 將多餘文字隱藏時（-webkit-line-clamp）會因本身有 ul+li 影響隱藏：拿掉 ul+li 即可解決。</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 第一次切全縮放的網頁，會犯的錯誤是？</a>
+                                <div class="cont">寬高都個別算百分比。後來執行幾個專案之後發現，全縮放的網頁最快的方式就是將同一物件都切為同寬，才能有效率的統整所有尺寸的物件。<br>在這個案子中，因為第一次嘗試寫全縮放，所以在個別的物件上都切有不同寬高的尺寸，造成後續維護的麻煩。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                因為該專案需要用特殊字體，所以整體頁面皆以切圖為主，正好縮放頁面也需要圖片撐開。
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p5_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>小小的 hover 動態能帶來一點驚喜</h4>
+                                        <ul>
+                                            <li>以 overflow:hidden; 的方式讓每次 hover 到手機時，能夠單獨將手機稍稍放大，為頁面增加一點生動有趣的元素。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>小小的 hover 動態能帶來一點驚喜</h4>
+                                    <ul>
+                                        <li>以 overflow:hidden; 的方式讓每次 hover 到手機時，能夠單獨將手機稍稍放大，為頁面增加一點生動有趣的元素。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p5_img2.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p5_img3.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p5_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>切換影片時，需清空.html('');</h4>
+                                        <ul>
+                                            <li>一般在辦公室電腦都是靜音的狀態。這很容易造成測試中會有遺漏的狀況。<br>例如透過標籤頁切換時，並無法如期將影片切斷，它可能會持續在背景中播放聲音，但卻因為電腦為靜音狀態下沒有注意到這個狀況。因此在每次透過標籤頁切換影片後，我會把 .html('') 清空，並在下次重新帶入 Youtube URL帶有 &&start=0 的影片連結重新播放，避免上一支影片有播放到一半的狀況。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>切換影片時，需清空.html(‘’);</h4>
+                                    <ul>
+                                        <li>一般在辦公室電腦都是靜音的狀態。這很容易造成測試中會有遺漏的狀況。<br>例如透過標籤頁切換時，並無法如期將影片切斷，它可能會持續在背景中播放聲音，但卻因為電腦為靜音狀態下沒有注意到這個狀況。因此在每次透過標籤頁切換影片後，我會把 .html('') 清空，並在下次重新帶入 Youtube URL帶有 &&start=0 的影片連結重新播放，避免上一支影片有播放到一半的狀況。</li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- project05-反正我好看 出色登場 -->
+
+                
+                <!-- project06-故宮聯名限定新裝 -->
+                <div class="project project06">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/page1_img2.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>故宮聯名限定新裝</h3>
+                                <p>古色古香，直書文字的運用。</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/page1_img2.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 06</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div id="work2" class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p6_icon1.png" alt="">
+                                    </div>
+                                    <h5>影片比例</h5>
+                                    <p>上一檔類似的專案中，客戶希望整屏內可以看完影片，卻又要求整屏100%佔滿（無黑框）。這兩件事是必須取捨一樣的。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p6_icon2.png" alt="">
+                                    </div>
+                                    <h5>由左至右</h5>
+                                    <p>以仿古為核心，所以文字內容大多都以左邊為起頭，但在手機版時卻又是反向，這時候用 float 解決最合適。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 頁面滾動到影片自動播放？</a>
+                                <div class="cont">用youtube api去控制autoplay，並用scroll去寫指定位置時player.playVideo();</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 一個按鈕桌手機有不同連結？</a>
+                                <div class="cont">此次專案導連的連結有分AWD的桌手機版，因此需額外寫判別為手機時要導連的連結。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                保留一些官網元素(營養標示、注意事項等)，注意某些細節可能會在放大視窗時而跑位，去針對大尺寸寫定位。
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p6_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>Menu 的「hamburger」出現的時機？</h4>
+                                        <ul>
+                                            <li>當縮放時，每個項目開始會重疊的時候，開始切換成以 menu hamburger 的方式包住選單項目。<br>像這個案子上方的選單列項目較多，因此在 1082px 時就會開啟 menu hamburger。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>Menu的「hamburger」出現的時機？</h4>
+                                    <ul>
+                                        <li>當縮放時，每個項目開始會重疊的時候，開始切換成以 menu hamburger 的方式包住選單項目。<br>像這個案子上方的選單列項目較多，因此在 1082px 時就會開啟 menu hamburger。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p6_img2.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p6_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>炸雞可能會掉到盤子下面！？</h4>
+                                        <ul>
+                                            <li>因為底圖是一張木桌＋漸層背景一層一層 relative 接下來的，炸雞又不適合跟背景圖切在一塊。因此分開切的狀況在某些寬度下，可能會有桌子高度跟炸雞對不上的情形。我的處理方式是以那些快掉下來的瞬間去額外寫 @media screen and (max-width: OOOpx)去解決尷尬狀況，並限制餐組的 max-width。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>炸雞可能會掉到盤子下面！？</h4>
+                                    <ul>
+                                        <li>因為底圖是一張木桌＋漸層背景一層一層 relative 接下來的，炸雞又不適合跟背景圖切在一塊。因此分開切的狀況在某些寬度下，可能會有桌子高度跟炸雞對不上的情形。我的處理方式是以那些快掉下來的瞬間去額外寫 @media screen and (max-width: OOOpx)去解決尷尬狀況，並限制餐組的 max-width。</li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                                
+                            </div>
+                            <a href="https://campaign.mcdonalds.com.tw/0722HSBLTO/" target="_blank" class="btn">線上連結</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- project06-故宮聯名限定新裝 -->
+
+                <!-- project07-全新升等優渥禮遇 -->
+                <div class="project project07">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/page1_img3.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>全新升等優渥禮遇</h3>
+                                <p>一頁式滾動，分層的細節特效。</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/page1_img3.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 07</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div id="work2" class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p7_icon1.png" alt="">
+                                    </div>
+                                    <h5>第一個專案</h5>
+                                    <p>印象深刻這是我第一個花旗專案。是資深的前端工程師手把手帶著我寫的。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p7_icon2.png" alt="">
+                                    </div>
+                                    <h5>套件運用</h5>
+                                    <p>這個專案需要滾動時一次只滾動一屏，在時間比較緊迫的狀況下先找套件處理。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p7_icon3.png" alt="">
+                                    </div>
+                                    <h5>viewport</h5>
+                                    <p>在最初期寫的網站，手機版多數以固定寬度處理。此網頁用的是width=750。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 第一次被手把手教學的深刻經驗是什麼？</a>
+                                <div class="cont">1、明確界定 padding、margin 的運用。<br>2、按鈕的寫法可以用 a 去界定點擊與導連功能。<br>3、relative 內可包含 absolute 去明確定位每個物件的位置。</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 套件的適用性？</a>
+                                <div class="cont">除了要事先測試每個裝置的適用性外，也要先跟資深的前輩確認該套件有否有技術、商業上的限制。</div>
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q3</span> viewport 定義固定寬度的優缺點？</a>
+                                <div class="cont">在轉接到 RWD 的時期，會以 viewport 固定寬來減少手機版破版的可能。優點是不同裝置的手機都可以顯示設計最理想的排版狀態、一些特殊且較複雜的頁面可以避免跑版，缺點是當桌上裝置縮放到小視窗時，版面會有破版狀況。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                因為該專案是一張比較高級別的信用卡，因此在視覺體驗上都希望可以有緩慢層次的呈現。因此每滾動一屏，都會有 4 秒的 opacity 的運算呈現出頁面。
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p7_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>KV 想要在每個裝置中整屏看到？height:100vh;</h4>
+                                        <ul>
+                                            <li>但為了不要隱藏 KV 中的每個細節，可以在圖片高度的外層 height: calc( 100vh-header高度 ); 去避免 header 遮蔽到畫面。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>KV 想要在每個裝置中整屏看到？height:100vh;</h4>
+                                    <ul>
+                                        <li>但為了不要隱藏 KV 中的每個細節，可以在圖片高度的外層 height: calc( 100vh-header高度 ); 去避免 header 遮蔽到畫面。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p7_img2.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont">
+                                    <img src="img/p7_img3.png" alt="" style="width: 100%;">
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p7_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>叫出含有不同文字的 pop-up</h4>
+                                        <ul>
+                                            <li>以前的作法會在 html 上把每個 pop-up 的文字內容都先放好，用 display:none 隱藏起來，在點擊時再叫出各別 pop-up 的文字。<br>另種做法可用 html 寫一個文字框，每個按鈕給一個名稱，在 js 中各別叫出文字以 html('') 填入。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>叫出含有不同文字的 pop-up</h4>
+                                        <ul>
+                                            <li>以前的作法會在 html 上把每個 pop-up 的文字內容都先放好，用 display:none 隱藏起來，在點擊時再叫出各別 pop-up 的文字。<br>另種做法可用 html 寫一個文字框，每個按鈕給一個名稱，在 js 中各別叫出文字以 html('') 填入。</li>
+                                        </ul>
+                                </div>
+                                <div class="clear"></div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- project07-全新升等優渥禮遇 -->
+
+                <!-- project08-安心刷 回饋隨行 -->
+                <div class="project project08">
+                    <div class="work work1">
+                        <div class="block">
+                            <div class="box img mShow">
+                                <img src="img/kv_img4.png" alt="" style="width: 100%;">
+                            </div>
+                            <div class="box txt">
+                                <h3>安心刷 回饋隨行</h3>
+                                <p>2021/6上線的專案。<br>細膩的處理促銷文字的呈現，讓後續維護更新時可以更有系統性地調整。</p>
+                            </div>
+                            <div class="box img pcShow">
+                                <img src="img/kv_img4.png" alt="" style="width: 100%;">
+                                <div class="clear"></div>
+                            </div>
+                            <div class="num">- 01</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div id="work2" class="work work2">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 1</span>架構思考
+                            </div>
+                            <div class="cont">
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p8_icon1.png" alt="">
+                                    </div>
+                                    <h5>KV文字</h5>
+                                    <p>因KV與其他視覺製作物同源，因此在處理上需更謹慎。我會以vw去寫字級，避免px在畫面縮小時候可能有比例不均的問題。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p8_icon2.png" alt="">
+                                    </div>
+                                    <h5>按鈕樣式</h5>
+                                    <p>找出所有樣式的共通點去寫一個主要樣式，再以不同的元素去區別不同class，避免重複撰寫。</p>
+                                </div>
+                                <div class="box">
+                                    <div class="icon">
+                                        <img src="img/p8_icon3.png" alt="">
+                                    </div>
+                                    <h5>全屏展開</h5>
+                                    <p>手機版在menu展開時，最底下的項目會有被瀏覽器預設的menu bar遮蔽，可考慮以height:90vh去解決。</p>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 解決問題 -->
+                    <div class="work work3">
+                        <div class="block">
+                            <div class="title">
+                                <span>step 2</span>解決問題
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q1</span> 物件高度的定義？</a>
+                                <div class="cont">我常用的方式是用 padding 去推出物件的高。但有可能會遇到同物件下文字量不足撐到同高的問題，這時候就會以min-height去做高度的統一。</div>
+                            </div>
+                            <div class="qa qa2">
+                                <a href="javascript:;" class="decQ"><span>Q2</span> 貼心的展開設計</a>
+                                <div class="cont">如果有必須展開的物件，勢必頁面會被往下延展。這時候可以在點擊展開的物件上觸發滾動，把使用者整體的視線一起轉移到展開的頁面。</div>
+                            </div>
+                            <div class="qa">
+                                <a href="javascript:;" class="decQ"><span>Q3</span> 注意事項的 text-indent</a>
+                                <div class="cont">整齊劃一的注意事項文字，除了以 list-style-type 去做整理外，有些非網頁上原始的樣式要對齊的話，就會以 text-indent + margin-left 去整理。這麼一來繁瑣的文字至少有版面對齊，不會令使用者感到煩躁。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work work4">
+                        <div class="block">
+                            <div class="title">
+                                <span>Final</span>呈現
+                            </div>
+                            <div class="dec">
+                                這個專案每一個區塊的原始設計都是一屏的高度，因此在設計上會有背景圖的運用。<br>相對要注意的就會是每一區塊高度和間距必須平均。
+                            </div>
+                            <div class="contBox">
+                                <div class="cont cont_long" data-img="img1">
+                                    <img src="img/p8_img1.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>在圖片延展性有限的狀況去限區域高度</h4>
+                                        <ul>
+                                            <li>在KV的處理上，我不會特別去侷限高度，避免裁切掉重要部分，且圖片皆以視窗大小 width:100% 去縮放。<br>但在其他內頁就會有背景圖片的寬高限制，我就會直接定下 height ，並再用一個區塊包住所有內容限定 max-width 不再讓它延展，讓畫面維持在最適切的範圍。但此處也要注意背景圖片中，設計希望不要被切到的地方，去調整 background-position。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>在圖片延展性有限的狀況去限區域高度</h4>
+                                    <ul>
+                                        <li>在KV的處理上，我不會特別去侷限高度，避免裁切掉重要部分，且圖片皆以視窗大小 width:100% 去縮放。<br>但在其他內頁就會有背景圖片的寬高限制，我就會直接定下 height ，並再用一個區塊包住所有內容限定 max-width 不再讓它延展，讓畫面維持在最適切的範圍。但此處也要注意背景圖片中，設計希望不要被切到的地方，去調整 background-position。</li>
+                                    </ul>
+                                </div>
+                                <div class="cont cont_long">
+                                    <img src="img/p8_img4.png" alt="" style="width: 100%;">
+                                    <div class="overlay">
+                                        <h4>｜標題｜帶有左有兩側線條裝飾</h4>
+                                        <ul>
+                                            <li>我會先限定標題寬度，再以偽元素去寫&before、&after左右兩側的白線。限定寬度的好處在，當左右兩側分別為left、right各為0時，白線可以緊貼在標題旁邊。</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cont cont_long mDec mShow">
+                                    <h4>｜標題｜帶有左有兩側線條裝飾</h4>
+                                    <ul>
+                                        <li>我會先限定標題寬度，再以偽元素去寫&before、&after左右兩側的白線。限定寬度的好處在，當左右兩側分別為left、right各為0時，白線可以緊貼在標題旁邊。</li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <a href="https://www.citibank.com.tw/zh/credit-cards/promotions/shopping/2021Q2ATL/" target="_blank" class="btn">線上連結</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- project08-安心刷 回饋隨行 -->
+                <div class="footer">
+                    <div class="block">
+                        <div class="contBox">
+                            <div class="box contact">
+                                <div class="logo">
+                                    <img src="img/logo.png" alt="">
+                                </div>
+                                <p>「每個網站都是品牌視覺的落實、體驗。」</p>
+                                <a href="mailto:tingn1020@icloud.com" target="_blank" class="mail">tingm1020@icloud.com</a>
+                            </div>
+                            <div class="box cont">
+                                <!-- <a href="javascript:;" class="sub"><p>ABOUT</p></a> -->
+                                <a href="projectList.html" class="sub"><p>ALL WORKS</p></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="copyright">Copyright © 2021 YATINGHSU All rights reserved.</div>
+                <div class="popup">
+                    <div class="popWrap">
+                        <div class="popCon">
+                            <a href="javascript:;" class="xBtn"></a>
+                            <div class="contBox"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/plugin/jquery.js"></script>
+        <script type="text/javascript" src="js/plugin/swiper.min.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+    </body>
+</html>
