@@ -1,40 +1,9 @@
 $(document).ready(function(){
     var $loading = $('.loading')
     window.onload = function() {
-        
-        // function addRemoveClass() {
-        //     var delay = 2250;
-        //     setTimeout(function() {
-        //         $('.img_animate .img').removeClass('on');
-        //         addRemoveClass(delay,1000);
-        //     }, delay);
-            
-        // };
-        // function imgAnimate(){
-        //     var $imgAnimation = $('.img_animate .img'), counter = 0;
-        
-        //     setTimeout(function(){
-        //         setInterval(function(){
-        //             if ($imgAnimation) clearInterval($imgAnimation);
-        //             $imgAnimation.eq(counter++ % $imgAnimation.length).addClass('on');
-        //         },250);
-        //         addRemoveClass();
-        //     });
-            
-        // }
-        // imgAnimate();
-
         function imgAnimate(){
-            
             var $imgAnimation = $('.img_animate .img'), counter = 0;
             setTimeout(function(){
-                // var delay = 7200;
-                // setTimeout(function(){
-                //     $('.img_animate .img').removeClass('on');
-                // }, delay);
-
-
-                // $('.img_animate .img').removeClass('on');
                 setTimeout(function(){
                     setInterval(function(){
                         if ($imgAnimation) clearInterval($imgAnimation);
@@ -45,29 +14,10 @@ $(document).ready(function(){
                             counter = 0;
                         }
                     }, 150);
-                    
                 },150);
             },150)
-            
-            // $imgAnimation.eq(counter++ % $imgAnimation.length).addClass('on');
         }
         imgAnimate();
-
-        // var banners = ["img/page4_img1_air1.png","img/page4_img1_air2.png","img/page4_img1_air3.png","img/page4_img1_air4.png","img/page4_img1_air5.png","img/page4_img1_air6.png","img/page4_img1_air7.png","img/page4_img1_air8.png"]; // 图片地址
-		// 	var counter = 0;
-		// 	function run(){
-		// 		setInterval(cycle,150);  //重复运行cycle函数，周期1000ms
-		// 	}
-		// 	function cycle(){
-        //         $("#imgQ").removeClass('on');
-		// 		counter++;
-		// 		if(counter == banners.length)	
-		// 			counter = 0;
-		// 		document.getElementById("imgQ").src = banners[counter];
-        //         $("#imgQ").addClass('on');
-
-		// 	}
-        //     run();
         $loading.removeClass('on');
     }
     
