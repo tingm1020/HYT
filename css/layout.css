@@ -1407,15 +1407,15 @@ button.swiper-pagination-bullet {
 }
 
 .main .page4 .img_animate .img7 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s;
   background: url(../img/page4_img1_air7.png) 50% 50% no-repeat;
   background-size: auto 100%;
 }
 
 .main .page4 .img_animate .img8 {
-  -webkit-transition: opacity .0s;
-  transition: opacity .0s;
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s;
   background: url(../img/page4_img1_air8.png) 50% 50% no-repeat;
   background-size: auto 100%;
 }
