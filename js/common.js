@@ -6,8 +6,9 @@ $(document).ready(function(){
             var delay = 2250;
             setTimeout(function() {
                 $('.img_animate .img').removeClass('on');
-                addRemoveClass();
+                addRemoveClass(delay,1000);
             }, delay);
+            
         };
         function imgAnimate(){
             var $imgAnimation = $('.img_animate .img'), counter = 0;
