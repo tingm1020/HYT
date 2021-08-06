@@ -12,16 +12,14 @@ $(document).ready(function(){
         };
         function imgAnimate(){
             var $imgAnimation = $('.img_animate .img'), counter = 0;
+        
             setTimeout(function(){
-                setTimeout(function(){
-                    setInterval(function(){
-                        if ($imgAnimation) clearInterval($imgAnimation);
-                        $imgAnimation.eq(counter++ % $imgAnimation.length).addClass('on');
-                    },250);
-                    addRemoveClass();
-                    // if ($imgAnimation) clearInterval($imgAnimation);
-                });
-            },300);
+                setInterval(function(){
+                    if ($imgAnimation) clearInterval($imgAnimation);
+                    $imgAnimation.eq(counter++ % $imgAnimation.length).addClass('on');
+                },250);
+                addRemoveClass();
+            });
             
         }
         imgAnimate();
